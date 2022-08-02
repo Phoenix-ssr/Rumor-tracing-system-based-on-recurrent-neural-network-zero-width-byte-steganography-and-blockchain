@@ -1,0 +1,101 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: A1ertx5s
+ * @Date: 2022-03-31 21:32:58
+ * @LastEditors: sA1ertx5s
+ * @LastEditTime: 2022-06-01 11:59:27
+-->
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+      <img src="/static/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">后台管理平台</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/static/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="{{ url_for('authentication_blueprint.logout') }}" class="d-block">
+            {{ current_user.username }} - Logout
+          </a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="/index.html" class="nav-link {% if 'index.html' in segment %} active {% endif %}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>首页</p>
+            </a>
+          </li>
+          <li class="nav-item has-treebiew {% if 'rumor' in segment %} menu-open {% endif %}">
+            <a href="#" class="nav-link {% if 'rumor' in segment %} active {% endif %}">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                谣言列表
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/rumor-all.html" class="nav-link {% if 'rumor-all' in segment %} active {% endif %}">
+                  <i class="far fa-circle nav-icon text-danger"></i>
+                  <p>所有未确认谣言</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/rumor-today.html" class="nav-link {% if 'rumor-today' in segment %} active {% endif %}">
+                  <i class="far fa-circle nav-icon text-danger"></i>
+                  <p>今日未确认谣言</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/rumor-is.html" class="nav-link {% if 'rumor-is' in segment %} active {% endif %}">
+                  <i class="far fa-circle nav-icon text-warning"></i>
+                  <p>已确认谣言</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/rumor-not.html" class="nav-link {% if 'rumor-not' in segment %} active {% endif %}">
+                  <i class="far fa-circle nav-icon text-info"></i>
+                  <p>正常言论</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/tree" class="nav-link {% if 'tree' in segment %} active {% endif %}">
+              <i class="nav-icon fas fa-sitemap"></i>
+              <p>溯源树</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  

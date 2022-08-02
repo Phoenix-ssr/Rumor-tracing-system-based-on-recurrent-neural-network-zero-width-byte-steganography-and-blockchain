@@ -1,0 +1,6 @@
+geth  –allow-insecure-unlock  --http  --datadir data0  2>log.txt console
+geth  –allow-insecure-unlock  --http  --datadir data0  2>log.txt console --mine
+geth  --unlock 5b69f37680ba9be71280c8c8da2b157ada702a43,5f289771459e459366c3437a75843cf4bbecc041 --password pwd  -allow-insecure-unlock  --http  --datadir data0  2>log.txt console
+geth > miner.start()
+ 修改string.sol
+geth --mine --unlock 5b69f37680ba9be71280c8c8da2b157ada702a43,5f289771459e459366c3437a75843cf4bbecc041 --password pwd  -allow-insecure-unlock  --http  --datadir data0  2>log.txt console

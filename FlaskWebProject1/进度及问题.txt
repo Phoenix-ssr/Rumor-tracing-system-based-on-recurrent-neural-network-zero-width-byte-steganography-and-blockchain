@@ -1,0 +1,2 @@
+flask db migrate -m "rumorid"
+flask db upgrade
